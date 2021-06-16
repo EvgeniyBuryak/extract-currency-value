@@ -7,14 +7,13 @@ function extractCurrencyValue(str) {
 
         let char = str[i];
 
-        if (!(+char)) {
+        // Проверка на число
+        if (!( +char )) {
             alert(`Не число: ${char}`);
-            continue;
-        } else {
-            alert(char);
-            str = str.slice(i);
-            break;
-        }
+            continue; // если не число, пропускаем один шаг цикла
+        }       
+        str = str.slice(i);
+        break; // если число, заканчиваем цикл целиком
     }
 
     return Number(str);
